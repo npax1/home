@@ -1,37 +1,15 @@
-// Importing
-required
-classes
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
-// Main
-
-
-class
-    public
-
-    class GFG {
-
-    // Main driver method
-    public static void main(String[] args)
-    throws IOException
-    {
-    // Assigning the content of the file
-    String text
-    = "Welcome to geekforgeeks\nHappy Learning!";
-
-    // Defining the file name of the file
-    Path fileName = Path.of(
-    "/Users/mayanksolanki/Desktop/demo.docx");
-
-    // Writing into the file
-    Files.writeString(fileName, text);
-
-    // Reading the content of the file
-    String file_content = Files.readString(fileName);
-
-    // Printing the content inside the file
-    System.out.println(file_content);
-    }
-    }
+import string
+text = open("sample.txt", "r")
+d = dict()
+for line in text:
+    line = line.strip()
+    line = line.lower()
+    line = line.translate(line.maketrans("", "", string.punctuation))
+    words = line.split(" ")
+    for word in words:
+        if word in d:
+            d[word] = d[word] + 1
+        else:
+            d[word] = 1
+for key in list(d.keys()):
+    print(key, " ", d[key])
